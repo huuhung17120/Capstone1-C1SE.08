@@ -5,5 +5,5 @@
 <span>+ Pham Minh Chien</span> <br/>
 <span>+ Le Quang Van</span> <br/>
 <span>+ Dang Nhat Long</span> <br/>
-<span>+ Le Ngoc Quang</span>
+<span>+ Duong Ngoc Quang</span>
 
