@@ -3,7 +3,7 @@ import { Button } from '@mui/material';
 import CreateIcon from '@mui/icons-material/Create';
 import './index.scss';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
-import Posts from '../../apis/Posts';
+import { Posts } from '../../apis/Posts';
 import { Container, Row, Input, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
 import Item from '../../components/Item';

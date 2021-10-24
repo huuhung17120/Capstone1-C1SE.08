@@ -5,6 +5,8 @@ import Home from '../../pages/HomePage';
 import HoiDap from '../../pages/HoiDap';
 import CuuTro from '../../pages/CuuTro';
 import Shop from '../../pages/Shop';
+import HomePostDetail from '../../pages/HomePostDetail';
+import User from '../../pages/User';
 
 const Main = () => (
     <main>
@@ -23,6 +25,12 @@ const Main = () => (
             </Route>
             <Route exact path='/create'>
                 <WritePost />
+            </Route>
+            <Route exact path='/post/:id'>
+                <HomePostDetail />
+            </Route>
+            <Route exact path='/user'>
+                <User />
             </Route>
         </Switch>
     </main>
