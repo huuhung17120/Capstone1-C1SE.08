@@ -21,7 +21,7 @@ function Header(props) {
                 <Row className='Header-row'>
                     <Col xs='12' sm='12' md='12' lg='6' className='Header-col-1'>
                         <img src={logo} alt='logo snpo' />
-                        <NavLink activeStyle={active} className='Header-col-1-link' exact to='/' >Trang chủ</NavLink>
+                        <NavLink activeStyle={active} className='Header-col-1-link' exact to='/home' >Trang chủ</NavLink>
                         <NavLink activeStyle={active} className='Header-col-1-link' to='/hoidap' >Hỏi đáp</NavLink>
                         <NavLink activeStyle={active} className='Header-col-1-link' to='/cuutro' >Cứu trợ</NavLink>
                         <NavLink activeStyle={active} className='Header-col-1-link' to='/shop' >Shop</NavLink>
