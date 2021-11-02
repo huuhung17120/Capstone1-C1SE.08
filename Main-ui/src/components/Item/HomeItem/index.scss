@@ -10,10 +10,12 @@
     font-style: italic;
     margin-left: 50px;
     font-size: 15px;
+    font-weight: normal;
 }
 
 .Item {
     &-link {
         text-decoration: none;
     }
+    padding: 0 1rem;
 }
