@@ -15,7 +15,6 @@ function ShopItem(props) {
     const { addToCart } = useContext(CartContext);
 
     const { Products } = props;
-    console.log(Products);
     return (
         Products.map((item, index) => {
             return <Col className='Item' sm="6" md='4' lg='3' key={index}>

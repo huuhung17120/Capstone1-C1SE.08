@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { toast } from 'react-toastify';
 
 const CartContext = React.createContext();
 
@@ -8,9 +9,17 @@ export const CartProvider = (props) => {
     const [total, setTotal] = useState();
     const addToCart = (product) => {
         alert('add success');
-        setCartItems(cartItems.concat(product));
+        toast.success('Add success 🎉🎉');
+        const newCartItems = [...cartItems];
+        newCartItems.push(product);
+        setCartItems(newCartItems);
     }
-
+    const removeItem = (item) => {
+        const newCartItems = [...cartItems];
+        const index = newCartItems.indexOf(item);
+        newCartItems.splice(index, 1);
+        setCartItems(newCartItems);
+    }
     useEffect(() => {
         setTotal(cartItems.length);
     }, [cartItems.length]);
@@ -20,7 +29,8 @@ export const CartProvider = (props) => {
             cartItems: cartItems,
             addToCart: addToCart,
             setCartItems: setCartItems,
-            total: total
+            total: total,
+            removeItem
         }}>
             {props.children}
         </CartContext.Provider>
