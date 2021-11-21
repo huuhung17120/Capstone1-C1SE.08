@@ -7,6 +7,9 @@ import logo from '../../assets/logo.jpg';
 import headImg from '../../assets/headimg.png';
 import user from '../../assets/user.jpg';
 import { Avatar, IconButton } from '@mui/material';
+import {useSelector} from 'react-redux'
+import store from '../../redux/store';
+import userSlice from '../../redux/user';
 
 const active = {
     fontWeight: 'bold',
@@ -14,8 +17,14 @@ const active = {
 }
 
 function Header(props) {
-    return (
+    const userStore = useSelector(state => state.userSlider)
 
+    const logout = () => {
+        localStorage.clear()
+        store.dispatch(userSlice.actions.setUserInfo(null))
+    }
+
+    return (
         <div className='Header'>
             <Container>
                 <Row className='Header-row'>
@@ -25,6 +34,7 @@ function Header(props) {
                         <NavLink activeStyle={active} className='Header-col-1-link' to='/hoidap' >Hỏi đáp</NavLink>
                         <NavLink activeStyle={active} className='Header-col-1-link' to='/cuutro' >Cứu trợ</NavLink>
                         <NavLink activeStyle={active} className='Header-col-1-link' to='/shop' >Shop</NavLink>
+
                     </Col>
                     <Col xs='12' sm='12' md='12' lg='4' className='Header-col-2'>
                         <InputGroup>
@@ -35,7 +45,10 @@ function Header(props) {
                         </InputGroup>
                     </Col>
                     <Col xs='12' sm='12' md='12' lg='2' className='Header-col-3'>
-                        <NavLink to='/user'>
+                        {
+                            userStore.userInfo ?
+                            <>
+                                <NavLink to='/user'>
                             <Avatar
                                 className='img'
                                 alt="Remy Sharp"
@@ -43,7 +56,11 @@ function Header(props) {
                                 sx={{ width: 56, height: 50 }}
                             />
                         </NavLink>
-                        <IconButton endIcon={<AllOutSharp />}><i class="fas fa-sign-out-alt"></i></IconButton>
+                        <IconButton onClick={logout} endIcon={<AllOutSharp />}><i class="fas fa-sign-out-alt"></i></IconButton>
+                            </>
+                            :
+                        <NavLink activeStyle={active} className='Header-col-1-link' to='/signin' >Đăng nhập</NavLink>
+                        }
                     </Col>
                 </Row>
             </Container>

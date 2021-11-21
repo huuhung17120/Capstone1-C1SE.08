@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Button } from '@mui/material';
 import './index.scss';
 import { Container, Col } from 'reactstrap';
-import { HoiDapPosts } from '../../apis/HoiDapPosts';
+import { HoiDapPosts } from '../../rawData/HoiDapPosts';
 import HoiDapItem from '../../components/Item/HoiDapItem';
 
 const HoiDap = (props) => {

@@ -1,9 +1,11 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, NavLink , Link} from 'react-router-dom';
 import { useHistory } from 'react-router';
 import userApi from "../../api/user";
+import store from '../../redux/store'
 
 import './index.css';
+import { userSlice } from "../../redux/user";
 
 const SignIn = () => {
 
@@ -21,7 +23,9 @@ const SignIn = () => {
             email: state.email,
             password: state.password,
         }).then(res => {
-            history.push('/about')
+            store.dispatch(userSlice.actions.setUserInfo(res.data))
+            localStorage.setItem('userInfo', JSON.stringify(res.data))
+            history.push('/home')
         })
     }
 
@@ -42,20 +46,20 @@ const SignIn = () => {
         }
     } 
     return (
-        <Router>
             <div className="SignIn">
-                <form onSubmit={onSubmit}>
-                    <div className="col-xs-7 col-sm-7 col-md-7 col-lg-7">
+            <form onSubmit={onSubmit}>
+                <div className="content">
                         <div className="col-2-content">
                             <label className='col-2'>🐈SNPO</label><br />
                             <span>Chúng tôi gắn kết những người nuôi thú cưng <br />trên toàn quốc</span>
                         </div>
                     </div>
-                    <div className="col-xs-5 col-sm-5 col-md-5 col-lg-5">
-                        <label className="col-1" >Sign in here</label> <br />
-                        {errorMessage &&(
+                    <div className="signinBx">
+                    
+                        <label className="col-1" >Đăng Nhập</label> <br />
+                        {/* {errorMessage &&(
                             <div className="error-message">{errorMessage}</div>
-                        )}
+                        )} */}
                         <span className="title">Email</span>
                         <input
                             value={state.email}
@@ -79,17 +83,11 @@ const SignIn = () => {
                         />
                         <button style={{ marginTop: 6 }} onClick={login} type="submit" className="btn btn-success">LOG IN</button>
                         <br />
-                        <span className="title">Not a member?<Link to="/signup"> Create Account</Link></span>
+                        <span className="title">Not a member?<NavLink to="/signup"> Create Account</NavLink></span>
+                      
                     </div>
-                </form >
-
-
-
+                    </form >
             </div >
-        </Router>
-
-
-
     );
 
 }

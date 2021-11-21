@@ -2,8 +2,12 @@ import React from 'react';
 import './index.scss';
 import user from '../../assets/user.jpg';
 import { Button, Col, Container, Row } from 'reactstrap';
+import {useSelector} from 'react-redux';
 function User(props) {
+    const userStore = useSelector(state => state.userSlider)
+    console.log(userStore, 'userStore');
     return (
+        
         <div className='User'>
             <Container >
                 <Row>
@@ -16,7 +20,7 @@ function User(props) {
                         <table>
                             <tr>
                                 <td>FullName: </td>
-                                <td>Nhat Long Dang</td>
+                                <td>{userStore?.userInfo?.username}</td>
                             </tr>
                             <tr>
                                 <td>Email: </td>

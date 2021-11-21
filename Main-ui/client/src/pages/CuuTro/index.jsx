@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Button } from '@mui/material';
 import './index.scss';
 import { Container, Col } from 'reactstrap';
-import { CuuTroPosts } from '../../apis/CuuTroPosts';
+import { CuuTroPosts } from '../../rawData/CuuTroPosts';
 import CuuTroItem from '../../components/Item/CuuTroItem';
 
 const CuuTro = (props) => {

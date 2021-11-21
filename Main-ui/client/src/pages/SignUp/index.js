@@ -36,15 +36,15 @@ const SignUp = () => {
 
     return (
         <Router>
-            <div className="SignIn">
+            <div className="SignUp">
                 <form onSubmit={(e) => e.preventDefault()}>
-                    <div className="col-xs-7 col-sm-7 col-md-7 col-lg-7">
+                    <div className="content">
                         <div className="col-2-content">
                             <label className='col-2'>🐈SNPO</label><br />
                             <span>Chúng tôi gắn kết những người nuôi thú cưng <br />trên toàn quốc</span>
                         </div>
                     </div>
-                    <div className="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+                    <div className="signupBx">
                         <label className="col-1" >Sign Up</label> <br />
                         <span className="title">UserName</span>
                         <input

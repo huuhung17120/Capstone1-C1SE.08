@@ -13,7 +13,7 @@ const schema = new mongoose.Schema(
     },
     authorId: {
       type: String,
-      required: true,
+      required: false,
       default: '',
     },
     attachment: String,
