@@ -9,14 +9,9 @@ import HomePostDetail from '../../pages/HomePostDetail';
 import User from '../../pages/User';
 import CuuTroPostDetail from '../../pages/CuuTroPostDetail';
 import HoiDapPostDetail from '../../pages/HoiDapPostDetail';
-<<<<<<< HEAD:Main-ui/client/src/components/Main/index.jsx
 import SignIn from '../../pages/SignIn';
 import SignUp from '../../pages/SignUp';
 import Cart from '../../pages/GioHang';
-=======
-import Cart from '../../pages/GioHang';
-
->>>>>>> master:Main-ui/src/components/Main/index.jsx
 const Main = () => (
     <main>
         <Switch>
@@ -29,10 +24,7 @@ const Main = () => (
             <Route exact path='/cuutro'>
                 <CuuTro />
             </Route>
-<<<<<<< HEAD:Main-ui/client/src/components/Main/index.jsx
             
-=======
->>>>>>> master:Main-ui/src/components/Main/index.jsx
             <Route exact path='/shop'>
                 <Shop />
             </Route>
