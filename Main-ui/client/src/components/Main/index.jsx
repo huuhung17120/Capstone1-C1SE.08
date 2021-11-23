@@ -15,7 +15,7 @@ import Cart from '../../pages/GioHang';
 const Main = () => (
     <main>
         <Switch>
-            <Route exact path='/home'>
+            <Route exact path='/'>
                 <Home />
             </Route>
             <Route exact path='/hoidap'>

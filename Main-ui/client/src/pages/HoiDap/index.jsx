@@ -1,15 +1,33 @@
 import React, { useState } from 'react';
 import { Button } from '@mui/material';
 import './index.scss';
-import { Container, Col } from 'reactstrap';
+
 import { HoiDapPosts } from '../../rawData/HoiDapPosts';
 import HoiDapItem from '../../components/Item/HoiDapItem';
+import { Container, Row, Input, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import { LoadingButton } from '@mui/lab';
 
 const HoiDap = (props) => {
+    
+    const [modal, setModal] = useState(false);
+    
+    const [postLoading, setPostLoading] = useState(false);
+    const toggle = () => setModal(!modal);
     return (
         <div className='HoiDap'>
             <div className="HoiDap-button">
-                <Button color='error' size='medium' variant="contained">Đặt câu hỏi ?</Button>
+                <Button  onClick={toggle} color='error' size='medium' variant="contained">Đặt câu hỏi ?</Button>
+                <Modal isOpen={modal} toggle={toggle}>
+                        <ModalHeader  toggle={toggle}>Add a post ✍️</ModalHeader>
+                        <ModalBody>
+                            <Input name="title" type="text" placeholder="title" />
+                            <Input name="content" type="text"  placeholder="content"   />
+                        </ModalBody>
+                        <ModalFooter>
+                            <LoadingButton loading={postLoading} color="primary" onClick={toggle}  >POST IT</LoadingButton>
+                            <Button variant='danger' onClick={toggle}>Cancel</Button>
+                        </ModalFooter>
+                    </Modal>
             </div>
 
             <div className='HoiDap-body'>

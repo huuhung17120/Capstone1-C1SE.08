@@ -25,7 +25,7 @@ const SignIn = () => {
         }).then(res => {
             store.dispatch(userSlice.actions.setUserInfo(res.data))
             localStorage.setItem('userInfo', JSON.stringify(res.data))
-            history.push('/home')
+            history.push('/')
         })
     }
 
