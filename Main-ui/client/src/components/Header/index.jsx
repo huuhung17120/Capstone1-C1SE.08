@@ -7,7 +7,7 @@ import logo from '../../assets/logo.jpg';
 import headImg from '../../assets/headimg.png';
 import user from '../../assets/user.jpg';
 import { Avatar, IconButton } from '@mui/material';
-import {useSelector} from 'react-redux'
+import { useSelector } from 'react-redux'
 import store from '../../redux/store';
 import userSlice from '../../redux/user';
 
@@ -47,19 +47,19 @@ function Header(props) {
                     <Col xs='12' sm='12' md='12' lg='2' className='Header-col-3'>
                         {
                             userStore.userInfo ?
-                            <>
-                                <NavLink to='/user'>
-                            <Avatar
-                                className='img'
-                                alt="Remy Sharp"
-                                src={user}
-                                sx={{ width: 56, height: 50 }}
-                            />
-                        </NavLink>
-                        <IconButton onClick={logout} endIcon={<AllOutSharp />}><i class="fas fa-sign-out-alt"></i></IconButton>
-                            </>
-                            :
-                        <NavLink activeStyle={active} className='Header-col-1-link' to='/signin' >Đăng nhập</NavLink>
+                                <>
+                                    <NavLink to='/user'>
+                                        <Avatar
+                                            className='img'
+                                            alt="Remy Sharp"
+                                            src={user}
+                                            sx={{ width: 56, height: 50 }}
+                                        />
+                                    </NavLink>
+                                    <IconButton onClick={logout} endIcon={<AllOutSharp />}><i class="fas fa-sign-out-alt"></i></IconButton>
+                                </>
+                                :
+                                <NavLink activeStyle={active} className='Header-col-1-link' to='/signin' >Đăng nhập</NavLink>
                         }
                     </Col>
                 </Row>
