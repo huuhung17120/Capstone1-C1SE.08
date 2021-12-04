@@ -3,6 +3,7 @@ import { useLocation, Link } from 'react-router-dom';
 import './index.scss';
 
 import { Button } from '@mui/material';
+import CommentBox from '../../components/CommentBox';
 function HomePostDetail(props) {
 
     //truyen props thong qua Link
@@ -26,11 +27,11 @@ function HomePostDetail(props) {
                         {post.title}
                     </h4>
                     <p className='body-content'>
-                    {post.content}
+                        {post.content}
                     </p>
                 </section>
                 <section className='foot'>
-                    
+                    <CommentBox />
                 </section>
             </div>
             <div className='right'>
