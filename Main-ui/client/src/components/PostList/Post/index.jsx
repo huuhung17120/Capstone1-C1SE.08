@@ -20,6 +20,11 @@ import './style.scss';
 export default function Post({ post }) {
     console.log(post);
     return (
+        <Link
+        className="card-link"
+        to={{ pathname: `/home/postid=${post?.postID}`, state: { post } }}
+        style={{ marginLeft: '32rem', marginBottom: '2rem', fontWeight: 'bold' }}
+    >
         <Card className='card'>
             <CardHeader
                 avatar={<Avatar></Avatar>}
@@ -36,7 +41,7 @@ export default function Post({ post }) {
             <CardMedia
                 image={img}
                 title="Title"
-                style={{ height: "500px", width: "700px", borderRadius: "5px", marginLeft: '17rem' }}
+                style={{ height: "500px", width: "700px", borderRadius: "5px",}}
             />
             
             <CardActions className='card-action'>
@@ -57,13 +62,10 @@ export default function Post({ post }) {
                     {post.content}{" "}
                 </Typography>
             </CardContent>
-            <Link
-                className="card-link"
-                to={{ pathname: `/home/postid=${post?.postID}`, state: { post } }}
-                style={{ marginLeft: '32rem', marginBottom: '2rem', fontWeight: 'bold' }}
-            >
-                Go to Detail
-            </Link>
+           
+              
+           
         </Card >
+        </Link>
     );
 }

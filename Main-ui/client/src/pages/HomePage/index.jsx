@@ -123,7 +123,7 @@ const Home = (props) => {
             <hr />
             <div className="Home-posts">
                 <Container>
-                    <Row>
+                    <Row >
                         <PostList />
                     </Row>
                 </Container>
