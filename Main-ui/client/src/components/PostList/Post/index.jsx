@@ -34,7 +34,7 @@ export default function Post({ post }) {
             <CardMedia
                 image={img}
                 title="Title"
-                style={{ height: "500px", width: "800px", borderRadius: "5px", marginLeft: '10rem' }}
+                style={{ height: "500px", width: "800px", borderRadius: "5px", marginLeft: '0rem' }}
             />
             <CardContent className='card-content'>
                 <Typography cariant="h5" color="textPrimary">
@@ -57,7 +57,7 @@ export default function Post({ post }) {
             <Link
                 className="card-link"
                 to={{ pathname: `/home/postid=${post?.postID}`, state: { post } }}
-                style={{ marginLeft: '32rem', marginBottom: '2rem', fontWeight: 'bold' }}
+                style={{ marginLeft: '15rem', marginBottom: '2rem', fontWeight: 'bold' }}
             >
                 Go to Detail
             </Link>
