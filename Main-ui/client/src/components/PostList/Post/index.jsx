@@ -27,7 +27,9 @@ export default function Post({ post }) {
                 subheader={moment(post.updateAt).format("HH:MM MMM DD,YYYY")}
                 action={
                     <IconButton>
-                        <MoreVertIcon></MoreVertIcon>
+                        <MoreVertIcon>
+                            oke
+                        </MoreVertIcon>
                     </IconButton>
                 }
             />
@@ -36,6 +38,15 @@ export default function Post({ post }) {
                 title="Title"
                 style={{ height: "500px", width: "800px", borderRadius: "5px", marginLeft: '0rem' }}
             />
+
+            <CardActions className='card-action'>
+                <IconButton>
+                    <FavoriteIcon />
+                    <Typography component="span" color="textSecondary">
+                        {post.likeCount}
+                    </Typography>
+                </IconButton>
+            </CardActions >
             <CardContent className='card-content'>
                 <Typography cariant="h5" color="textPrimary">
                     {" "}
@@ -46,14 +57,6 @@ export default function Post({ post }) {
                     {post.content}{" "}
                 </Typography>
             </CardContent>
-            <CardActions className='card-action'>
-                <IconButton>
-                    <FavoriteIcon />
-                    <Typography component="span" color="textSecondary">
-                        {post.likeCount}
-                    </Typography>
-                </IconButton>
-            </CardActions >
             <Link
                 className="card-link"
                 to={{ pathname: `/home/postid=${post?.postID}`, state: { post } }}
