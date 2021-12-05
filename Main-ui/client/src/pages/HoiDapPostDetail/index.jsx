@@ -2,7 +2,7 @@ import React from 'react';
 import { useLocation, Link } from 'react-router-dom';
 import './index.scss';
 
-import { Button } from '@mui/material';
+import { Button ,  } from '@mui/material';
 function HoiDapPostDetail(props) {
 
     //truyen props thong qua Link
