@@ -43,7 +43,7 @@ export default function Post({ post }) {
                 title="Title"
                 style={{ height: "500px", width: "700px", borderRadius: "5px",}}
             />
-            
+
             <CardActions className='card-action'>
                 <IconButton>
                     <FavoriteIcon />
